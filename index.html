@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مدرسه ابتدایی معراج اندیشه</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Vazirmatn,Arial,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.8;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:linear-gradient(135deg,#123c7a,#2474d9);
+    color:white;
+    box-shadow:0 4px 20px #0002;
+}
+
+.header-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    justify-content:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:8px;
+    font-size:13px;
+}
+
+nav a:hover{
+    background:#ffffff20;
+}
+
+.hero{
+    min-height:480px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:50px 20px;
+    color:white;
+    background:
+        linear-gradient(135deg,#123c7ae8,#2474d9e8),
+        url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:46px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:19px;
+    margin-bottom:28px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    border:0;
+    border-radius:10px;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:bold;
+    margin:4px;
+    background:white;
+    color:#1557a6;
+}
+
+.btn.primary{
+    background:#1557a6;
+    color:white;
+}
+
+.btn.danger{
+    background:#d93636;
+    color:white;
+}
+
+.container{
+    max-width:1250px;
+    margin:auto;
+}
+
+section{
+    padding:65px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    color:#1557a6;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#687386;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    padding:24px;
+    box-shadow:0 5px 25px #0000000d;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px #00000014;
+}
+
+.card h3{
+    color:#1557a6;
+    margin-bottom:8px;
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.date{
+    color:#8993a4;
+    font-size:12px;
+    margin-top:12px;
+}
+
+.info-box{
+    background:linear-gradient(135deg,#123c7a,#2474d9);
+    color:white;
+    padding:35px;
+    border-radius:22px;
+}
+
+.info-grid{
+    margin-top:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.info-item{
+    background:#ffffff18;
+    padding:18px;
+    border-radius:12px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+details{
+    background:white;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:12px;
+    box-shadow:0 3px 15px #00000009;
+}
+
+summary{
+    cursor:pointer;
+    color:#1557a6;
+    font-weight:bold;
+}
+
+footer{
+    background:#101828;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+}
+
+.admin-section{
+    background:#eaf0f8;
+}
+
+.login-box,
+.admin-panel{
+    max-width:1000px;
+    margin:auto;
+}
+
+.form-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 5px 20px #0000000d;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    border:1px solid #d8dee8;
+    border-radius:9px;
+    padding:12px;
+    margin-bottom:14px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#2474d9;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat{
+    background:white;
+    padding:22px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 18px #0000000b;
+}
+
+.stat-number{
+    display:block;
+    font-size:30px;
+    color:#1557a6;
+    font-weight:bold;
+}
+
+.admin-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.admin-item{
+    background:white;
+    padding:17px;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-actions{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.small-btn{
+    padding:8px 13px;
+    border:0;
+    border-radius:7px;
+    cursor:pointer;
+    color:white;
+}
+
+.edit{
+    background:#e28b19;
+}
+
+.delete{
+    background:#d93636;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.message{
+    margin-top:12px;
+    font-weight:bold;
+}
+
+.search-box{
+    max-width:600px;
+    margin:0 auto 25px;
+}
+
+.empty{
+    text-align:center;
+    padding:25px;
+    color:#777;
+    background:white;
+    border-radius:12px;
+}
+
+.staff{
+    text-align:center;
+}
+
+.staff img{
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:10px;
+}
+
+.grade{
+    text-align:center;
+}
+
+.grade-number{
+    font-size:40px;
+    font-weight:bold;
+    color:#2474d9;
+}
+
+.top-button{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#1557a6;
+    color:white;
+    border:0;
+    cursor:pointer;
+    font-size:20px;
+    display:none;
+    z-index:900;
+}
+
+@media(max-width:800px){
+
+    .header-inner{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero{
+        min-height:420px;
+    }
+
+    section{
+        padding:45px 15px;
+    }
+
+    .admin-item{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+<div class="logo">
+🏫 مدرسه ابتدایی معراج اندیشه
+</div>
+
+<nav>
+
+<a href="#home">خانه</a>
+<a href="#announcements">اطلاعیه‌ها</a>
+<a href="#news">اخبار</a>
+<a href="#achievements">افتخارات</a>
+<a href="#staff">کادر</a>
+<a href="#grades">پایه‌ها</a>
+<a href="#gallery">گالری</a>
+<a href="#contact">تماس</a>
+<a href="#faq">سؤالات</a>
+<a href="#admin">مدیریت</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+مدرسه ابتدایی معراج اندیشه
+</h1>
+
+<p>
+محیطی برای یادگیری، رشد، خلاقیت و ساختن آینده‌ای روشن
+</p>
+
+<a href="#announcements" class="btn">
+📢 اطلاعیه‌ها
+</a>
+
+<a href="#contact" class="btn primary">
+📍 اطلاعات مدرسه
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ANNOUNCEMENTS -->
+
+<section id="announcements">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>📢 اطلاعیه‌های مدرسه</h2>
+
+<p>
+آخرین اطلاعیه‌های منتشرشده
+</p>
+
+</div>
+
+<div class="search-box">
+
+<input
+id="announcementSearch"
+type="text"
+placeholder="🔎 جست‌وجو در اطلاعیه‌ها..."
+oninput="renderPublic()">
+
+</div>
+
+<div
+class="cards"
+id="announcementList">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section id="news">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>📰 اخبار مدرسه</h2>
+
+<p>
+رویدادها و اخبار مدرسه
+</p>
+
+</div>
+
+<div class="cards" id="newsList">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>🏆 افتخارات</h2>
+
+<p>
+موفقیت‌ها و دستاوردهای دانش‌آموزان
+</p>
+
+</div>
+
+<div class="cards" id="achievementList">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STAFF -->
+
+<section id="staff">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>👨‍🏫 کادر مدرسه</h2>
+
+<p>
+معرفی کادر آموزشی مدرسه
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card staff">
+
+<img
+src=""
+alt="مدیریت">
+
+<h3>مدیریت مدرسه</h3>
+
+<p>
+جناب اقای یوسفی
+</p>
+
+</div>
+
+
+<div class="card staff">
+
+<img
+src=""
+alt="معاون">
+
+<h3>معاون آموزشی</h3>
+
+<p>
+جناب اقای زمردکار
+</p>
+
+</div>
+
+
+<div class="card staff">
+
+<img
+src=""
+alt="معاون پرورشی">
+
+<h3>معاون پرورشی</h3>
+
+<p>
+جناب اقای سلیمی
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GRADES -->
+
+<section id="grades">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>📚 پایه‌های تحصیلی</h2>
+
+<p>
+پایه‌های اول تا ششم ابتدایی
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card grade">
+<div class="grade-number">۱</div>
+<h3>پایه اول</h3>
+<p>آموزش پایه اول ابتدایی</p>
+</div>
+
+<div class="card grade">
+<div class="grade-number">۲</div>
+<h3>پایه دوم</h3>
+<p>آموزش پایه دوم ابتدایی</p>
+</div>
+
+<div class="card grade">
+<div class="grade-number">۳</div>
+<h3>پایه سوم</h3>
+<p>آموزش پایه سوم ابتدایی</p>
+</div>
+
+<div class="card grade">
+<div class="grade-number">۴</div>
+<h3>پایه چهارم</h3>
+<p>آموزش پایه چهارم ابتدایی</p>
+</div>
+
+<div class="card grade">
+<div class="grade-number">۵</div>
+<h3>پایه پنجم</h3>
+<p>آموزش پایه پنجم ابتدایی</p>
+</div>
+
+<div class="card grade">
+<div class="grade-number">۶</div>
+<h3>پایه ششم</h3>
+<p>آموزش پایه ششم ابتدایی</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>🖼️ گالری مدرسه</h2>
+
+<p>
+تصاویر محیط و فعالیت‌های مدرسه
+</p>
+
+</div>
+
+<div class=""
+
+<img src=""
+
+<img src=""
+
+<img src=""
+
+<img src=""
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="info-box">
+
+<h2>
+📍 اطلاعات مدرسه
+</h2>
+
+<p>
+اطلاعات مدرسه
+</p>
+
+<div class="info-grid">
+
+<div class="info-item">
+🏫
+<strong>نام مدرسه</strong>
+<br>
+مدرسه ابتدایی پسرانه معراج اندیشه
+</div>
+
+<div class="info-item">
+📍
+<strong>آدرس</strong>
+<br>
+ کوچه شهید بهمنی . دبستان معراج اندیشه
+</div>
+
+<div class="info-item">
+📞
+<strong>تلفن</strong>
+<br>
+پس از تأیید مدیر وارد می شود
+</div>
+
+<div class="info-item">
+🕐
+<strong>ساعات کاری</strong>
+<br>
+روز های شنبه تا چهار شنبه از ساعت 13 تا 17 
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RULES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>📄 قوانین مدرسه</h2>
+
+</div>
+
+<details>
+
+<summary>
+حضور و نظم
+</summary>
+
+<p>
+دانش‌آموزان باید طبق برنامه مدرسه در کلاس‌ها حضور داشته باشند.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+رعایت قوانین
+</summary>
+
+<p>
+رعایت قوانین آموزشی، اخلاقی و انضباطی مدرسه ضروری است.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+وسایل آموزشی
+</summary>
+
+<p>
+دانش‌آموزان وسایل مورد نیاز خود را طبق برنامه همراه داشته باشند.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>❓ پرسش‌های متداول</h2>
+
+</div>
+
+<details>
+
+<summary>
+مدرسه چه پایه‌هایی دارد؟
+</summary>
+
+<p>
+پایه‌های اول تا ششم ابتدایی.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+اطلاعیه‌های مدرسه کجا قرار می‌گیرند؟
+</summary>
+
+<p>
+اطلاعیه‌ها در بخش اطلاعیه‌های همین سامانه نمایش داده می‌شوند.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+چگونه با مدرسه تماس بگیریم؟
+</summary>
+
+<p>
+اطلاعات تماس مدرسه پس از تأیید مدیر در سامانه قرار می‌گیرد.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- ADMIN -->
+
+<section id="admin" class="admin-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>🔐 پنل مدیریت</h2>
+
+<p>
+مدیریت محتوای سامانه مدرسه
+</p>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="loginBox" class="login-box">
+
+<div class="form-card">
+
+<h3>
+ورود مدیر
+</h3>
+
+<br>
+
+<label>
+نام کاربری
+</label>
+
+<input
+id="username"
+type="text"
+placeholder="نام کاربری">
+
+
+<label>
+رمز عبور
+</label>
+
+<input
+id="password"
+type="password"
+placeholder="رمز عبور">
+
+
+<button
+class="btn primary"
+onclick="login()">
+
+🔐 ورود به پنل
+
+</button>
+
+<p
+id="loginMessage"
+class="message">
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<div
+id="adminPanel"
+class="admin-panel hidden">
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard">
+
+<div class="stat">
+
+<span
+class="stat-number"
+id="announcementCount">
+0
+</span>
+
+اطلاعیه
+
+</div>
+
+
+<div class="stat">
+
+<span
+class="stat-number"
+id="newsCount">
+0
+</span>
+
+خبر
+
+</div>
+
+
+<div class="stat">
+
+<span
+class="stat-number"
+id="achievementCount">
+0
+</span>
+
+افتخار
+
+</div>
+
+
+<div class="stat">
+
+<span
+class="stat-number">
+۶
+</span>
+
+پایه تحصیلی
+
+</div>
+
+</div>
+
+
+<!-- ANNOUNCEMENT FORM -->
+
+<div class="form-card">
+
+<h3>
+📢 مدیریت اطلاعیه‌ها
+</h3>
+
+<br>
+
+<label>
+عنوان
+</label>
+
+<input
+id="announcementTitle"
+placeholder="عنوان اطلاعیه">
+
+
+<label>
+متن
+</label>
+
+<textarea
+id="announcementContent"
+placeholder="متن اطلاعیه"></textarea>
+
+
+<button
+class="btn primary"
+onclick="saveAnnouncement()">
+
+➕ افزودن اطلاعیه
+
+</button>
+
+</div>
+
+
+<div class="form-card">
+
+<div
+id="adminAnnouncements"
+class="admin-list">
+</div>
+
+</div>
+
+
+<!-- NEWS FORM -->
+
+<div class="form-card">
+
+<h3>
+📰 مدیریت اخبار
+</h3>
+
+<br>
+
+<label>
+عنوان خبر
+</label>
+
+<input
+id="newsTitle"
+placeholder="عنوان خبر">
+
+
+<label>
+متن خبر
+</label>
+
+<textarea
+id="newsContent"
+placeholder="متن خبر"></textarea>
+
+
+<button
+class="btn primary"
+onclick="saveNews()">
+
+➕ افزودن خبر
+
+</button>
+
+</div>
+
+
+<div class="form-card">
+
+<div
+id="adminNews"
+class="admin-list">
+</div>
+
+</div>
+
+
+<!-- ACHIEVEMENT FORM -->
+
+<div class="form-card">
+
+<h3>
+🏆 مدیریت افتخارات
+</h3>
+
+<br>
+
+<label>
+عنوان
+</label>
+
+<input
+id="achievementTitle"
+placeholder="عنوان افتخار">
+
+
+<label>
+توضیحات
+</label>
+
+<textarea
+id="achievementContent"
+placeholder="توضیحات افتخار"></textarea>
+
+
+<button
+class="btn primary"
+onclick="saveAchievement()">
+
+➕ افزودن افتخار
+
+</button>
+
+</div>
+
+
+<div class="form-card">
+
+<div
+id="adminAchievements"
+class="admin-list">
+</div>
+
+</div>
+
+
+<button
+class="btn danger"
+onclick="logout()">
+
+🚪 خروج از پنل
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<h3>
+🏫 مدرسه ابتدایی معراج اندیشه
+</h3>
+
+<p>
+سامانه اطلاع‌رسانی مدرسه
+</p>
+
+<p>
+© ۱۴۰۵
+</p>
+
+</footer>
+
+
+<button
+class="top-button"
+id="topButton"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+↑
+
+</button>
+
+
+<script>
+
+/* =========================
+   DATABASE
+========================= */
+
+let announcements =
+JSON.parse(localStorage.getItem("meraj_announcements")) || [
+
+{
+id:1,
+title:"آغاز سال تحصیلی",
+content:"به سامانه مدرسه ابتدایی معراج اندیشه خوش آمدید."
+},
+
+{
+id:2,
+title:"اطلاعیه آموزشی",
+content:"اطلاعیه‌های جدید مدرسه از طریق این سامانه منتشر خواهند شد."
+}
+
+];
+
+
+let news =
+JSON.parse(localStorage.getItem("meraj_news")) || [
+
+{
+id:1,
+title:"فعالیت‌های آموزشی",
+content:"فعالیت‌های آموزشی و پرورشی دانش‌آموزان در طول سال ادامه دارد."
+}
+
+];
+
+
+let achievements =
+JSON.parse(localStorage.getItem("meraj_achievements")) || [
+
+{
+id:1,
+title:"موفقیت علمی",
+content:"تقدیر از دانش‌آموزان پرتلاش و موفق."
+},
+
+{
+id:2,
+title:"فعالیت فرهنگی",
+content:"حضور دانش‌آموزان در برنامه‌های فرهنگی و هنری."
+}
+
+];
+
+
+let editMode = null;
+let editType = null;
+
+
+/* =========================
+   SAVE DATABASE
+========================= */
+
+function saveDatabase(){
+
+localStorage.setItem(
+"meraj_announcements",
+JSON.stringify(announcements)
+);
+
+localStorage.setItem(
+"meraj_news",
+JSON.stringify(news)
+);
+
+localStorage.setItem(
+"meraj_achievements",
+JSON.stringify(achievements)
+);
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+function login(){
+
+const username =
+document.getElementById("username").value.trim();
+
+const password =
+document.getElementById("password").value;
+
+if(username === "admin" && password === "1234"){
+
+document
+.getElementById("loginBox")
+.classList.add("hidden");
+
+document
+.getElementById("adminPanel")
+.classList.remove("hidden");
+
+document.getElementById("loginMessage").innerText="";
+
+renderAdmin();
+
+}else{
+
+document.getElementById("loginMessage").innerText =
+"❌ نام کاربری یا رمز عبور اشتباه است.";
+
+}
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+document
+.getElementById("adminPanel")
+.classList.add("hidden");
+
+document
+.getElementById("loginBox")
+.classList.remove("hidden");
+
+}
+
+
+/* =========================
+   ID
+========================= */
+
+function newId(){
+
+return Date.now();
+
+}
+
+
+/* =========================
+   ADD ANNOUNCEMENT
+========================= */
+
+function saveAnnouncement(){
+
+const title =
+document.getElementById("announcementTitle").value.trim();
+
+const content =
+document.getElementById("announcementContent").value.trim();
+
+if(!title || !content){
+
+alert("عنوان و متن را وارد کنید.");
+
+return;
+
+}
+
+
+if(editMode !== null && editType === "announcement"){
+
+const item =
+announcements.find(x => x.id === editMode);
+
+if(item){
+
+item.title = title;
+item.content = content;
+
+}
+
+editMode = null;
+editType = null;
+
+}else{
+
+announcements.unshift({
+
+id:newId(),
+title:title,
+content:content
+
+});
+
+}
+
+
+saveDatabase();
+
+clearForms();
+
+renderPublic();
+
+renderAdmin();
+
+}
+
+
+/* =========================
+   ADD NEWS
+========================= */
+
+function saveNews(){
+
+const title =
+document.getElementById("newsTitle").value.trim();
+
+const content =
+document.getElementById("newsContent").value.trim();
+
+if(!title || !content){
+
+alert("عنوان و متن را وارد کنید.");
+
+return;
+
+}
+
+
+if(editMode !== null && editType === "news"){
+
+const item =
+news.find(x => x.id === editMode);
+
+if(item){
+
+item.title = title;
+item.content = content;
+
+}
+
+editMode = null;
+editType = null;
+
+}else{
+
+news.unshift({
+
+id:newId(),
+title:title,
+content:content
+
+});
+
+}
+
+
+saveDatabase();
+
+clearForms();
+
+renderPublic();
+
+renderAdmin();
+
+}
+
+
+/* =========================
+   ADD ACHIEVEMENT
+========================= */
+
+function saveAchievement(){
+
+const title =
+document.getElementById("achievementTitle").value.trim();
+
+const content =
+document.getElementById("achievementContent").value.trim();
+
+if(!title || !content){
+
+alert("عنوان و توضیحات را وارد کنید.");
+
+return;
+
+}
+
+
+if(editMode !== null && editType === "achievement"){
+
+const item =
+achievements.find(x => x.id === editMode);
+
+if(item){
+
+item.title = title;
+item.content = content;
+
+}
+
+editMode = null;
+editType = null;
+
+}else{
+
+achievements.unshift({
+
+id:newId(),
+title:title,
+content:content
+
+});
+
+}
+
+
+saveDatabase();
+
+clearForms();
+
+renderPublic();
+
+renderAdmin();
+
+}
+
+
+/* =========================
+   DELETE
+========================= */
+
+function deleteItem(type,id){
+
+if(!confirm("آیا از حذف این مورد مطمئن هستید؟")){
+
+return;
+
+}
+
+
+if(type === "announcement"){
+
+announcements =
+announcements.filter(x => x.id !== id);
+
+}
+
+
+if(type === "news"){
+
+news =
+news.filter(x => x.id !== id);
+
+}
+
+
+if(type === "achievement"){
+
+achievements =
+achievements.filter(x => x.id !== id);
+
+}
+
+
+saveDatabase();
+
+renderPublic();
+
+renderAdmin();
+
+}
+
+
+/* =========================
+   EDIT
+========================= */
+
+function editItem(type,id){
+
+let item;
+
+
+if(type === "announcement"){
+
+item =
+announcements.find(x => x.id === id);
+
+document.getElementById("announcementTitle").value =
+item.title;
+
+document.getElementById("announcementContent").value =
+item.content;
+
+}
+
+
+if(type === "news"){
+
+item =
+news.find(x => x.id === id);
+
+document.getElementById("newsTitle").value =
+item.title;
+
+document.getElementById("newsContent").value =
+item.content;
+
+}
+
+
+if(type === "achievement"){
+
+item =
+achievements.find(x => x.id === id);
+
+document.getElementById("achievementTitle").value =
+item.title;
+
+document.getElementById("achievementContent").value =
+item.content;
+
+}
+
+
+editMode = id;
+editType = type;
+
+window.scrollTo({
+
+top:document.getElementById("admin").offsetTop - 80,
+
+behavior:"smooth"
+
+});
+
+}
+
+
+/* =========================
+   CLEAR FORMS
+========================= */
+
+function clearForms(){
+
+document.getElementById("announcementTitle").value="";
+document.getElementById("announcementContent").value="";
+
+document.getElementById("newsTitle").value="";
+document.getElementById("newsContent").value="";
+
+document.getElementById("achievementTitle").value="";
+document.getElementById("achievementContent").value="";
+
+}
+
+
+/* =========================
+   PUBLIC
+========================= */
+
+function renderPublic(){
+
+const search =
+document
+.getElementById("announcementSearch")
+.value
+.toLowerCase()
+.trim();
+
+
+const announcementList =
+document.getElementById("announcementList");
+
+const filtered =
+announcements.filter(item =>
+
+item.title.toLowerCase().includes(search) ||
+item.content.toLowerCase().includes(search)
+
+);
+
+
+if(filtered.length === 0){
+
+announcementList.innerHTML =
+'<div class="empty">اطلاعیه‌ای پیدا نشد.</div>';
+
+}else{
+
+announcementList.innerHTML =
+filtered.map(item => `
+
+<div class="card">
+
+<div class="icon">📢</div>
+
+<h3>${escapeHTML(item.title)}</h3>
+
+<p>
+${escapeHTML(item.content)}
+</p>
+
+<div class="date">
+آخرین بروزرسانی
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+const newsList =
+document.getElementById("newsList");
+
+
+if(news.length === 0){
+
+newsList.innerHTML =
+'<div class="empty">خبری ثبت نشده است.</div>';
+
+}else{
+
+newsList.innerHTML =
+news.map(item => `
+
+<div class="card">
+
+<div class="icon">📰</div>
+
+<h3>${escapeHTML(item.title)}</h3>
+
+<p>
+${escapeHTML(item.content)}
+</p>
+
+</div>
+
+`).join("");
+
+}
+
+
+const achievementList =
+document.getElementById("achievementList");
+
+
+if(achievements.length === 0){
+
+achievementList.innerHTML =
+'<div class="empty">افتخاری ثبت نشده است.</div>';
+
+}else{
+
+achievementList.innerHTML =
+achievements.map(item => `
+
+<div class="card">
+
+<div class="icon">🏆</div>
+
+<h3>${escapeHTML(item.title)}</h3>
+
+<p>
+${escapeHTML(item.content)}
+</p>
+
+</div>
+
+`).join("");
+
+}
+
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+function renderAdmin(){
+
+document.getElementById("announcementCount").innerText =
+announcements.length;
+
+document.getElementById("newsCount").innerText =
+news.length;
+
+document.getElementById("achievementCount").innerText =
+achievements.length;
+
+
+document.getElementById("adminAnnouncements").innerHTML =
+
+announcements.length ?
+
+announcements.map(item => `
+
+<div class="admin-item">
+
+<div>
+
+<strong>
+📢 ${escapeHTML(item.title)}
+</strong>
+
+<br>
+
+<small>
+${escapeHTML(item.content)}
+</small>
+
+</div>
+
+<div class="admin-actions">
+
+<button
+class="small-btn edit"
+onclick="editItem('announcement',${item.id})">
+
+✏️ ویرایش
+
+</button>
+
+<button
+class="small-btn delete"
+onclick="deleteItem('announcement',${item.id})">
+
+🗑️ حذف
+
+</button>
+
+</div>
+
+</div>
+
+`).join("")
+
+:
+
+'<div class="empty">اطلاعیه‌ای ثبت نشده است.</div>';
+
+
+document.getElementById("adminNews").innerHTML =
+
+news.length ?
+
+news.map(item => `
+
+<div class="admin-item">
+
+<div>
+
+<strong>
+📰 ${escapeHTML(item.title)}
+</strong>
+
+<br>
+
+<small>
+${escapeHTML(item.content)}
+</small>
+
+</div>
+
+<div class="admin-actions">
+
+<button
+class="small-btn edit"
+onclick="editItem('news',${item.id})">
+
+✏️ ویرایش
+
+</button>
+
+<button
+class="small-btn delete"
+onclick="deleteItem('news',${item.id})">
+
+🗑️ حذف
+
+</button>
+
+</div>
+
+</div>
+
+`).join("")
+
+:
+
+'<div class="empty">خبری ثبت نشده است.</div>';
+
+
+document.getElementById("adminAchievements").innerHTML =
+
+achievements.length ?
+
+achievements.map(item => `
+
+<div class="admin-item">
+
+<div>
+
+<strong>
+🏆 ${escapeHTML(item.title)}
+</strong>
+
+<br>
+
+<small>
+${escapeHTML(item.content)}
+</small>
+
+</div>
+
+<div class="admin-actions">
+
+<button
+class="small-btn edit"
+onclick="editItem('achievement',${item.id})">
+
+✏️ ویرایش
+
+</button>
+
+<button
+class="small-btn delete"
+onclick="deleteItem('achievement',${item.id})">
+
+🗑️ حذف
+
+</button>
+
+</div>
+
+</div>
+
+`).join("")
+
+:
+
+'<div class="empty">افتخاری ثبت نشده است.</div>';
+
+}
+
+
+/* =========================
+   SECURITY
+========================= */
+
+function escapeHTML(text){
+
+const div =
+document.createElement("div");
+
+div.textContent = text;
+
+return div.innerHTML;
+
+}
+
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+window.addEventListener("scroll",function(){
+
+const button =
+document.getElementById("topButton");
+
+if(window.scrollY > 400){
+
+button.style.display="block";
+
+}else{
+
+button.style.display="none";
+
+}
+
+});
+
+
+/* =========================
+   START
+========================= */
+
+renderPublic();
+
+</script>
+
+
+</body>
+</html>
